@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Tâches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ma Liste de Tâches</h1>
+    <input type="text" id="taskInput" placeholder="Ajouter une tâche...">
+    <button onclick="addTask()">Ajouter</button>
+
+    <h2>Tâches :</h2>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskValue = taskInput.value;
+
+            if (taskValue) {
+                const li = document.createElement('li');
+                li.textContent = taskValue;
+                document.getElementById('taskList').appendChild(li);
+                taskInput.value = ''; // Réinitialiser l'input
+            } else {
+                alert("Veuillez entrer une tâche !");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
